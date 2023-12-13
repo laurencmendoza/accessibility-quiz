@@ -1,0 +1,7 @@
+.card {
+    background-color: var(--dark-blue);
+    padding: 1rem 3rem;
+    width: max-content;
+    align-self: center;
+    border-radius: 25px;
+}
