@@ -13,6 +13,12 @@ export default function Quiz() {
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
+                <div class="options">
+                    <button>{questions[count].optionA}</button>
+                    <button>{questions[count].optionB}</button>
+                    <button>{questions[count].optionC}</button>
+                    <button>{questions[count].optionD}</button>
+                </div>
                 {count < 9 ? (
                     <button onClick={() => setCount(count+1)}>Next</button>
                 ) : (

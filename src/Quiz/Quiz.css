@@ -5,3 +5,10 @@
     align-self: center;
     border-radius: 25px;
 }
+
+.options {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto;
+    margin: 28px 0px;
+}
