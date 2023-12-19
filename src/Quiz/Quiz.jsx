@@ -10,6 +10,18 @@ export default function Quiz() {
 
     return (
         <>
+            <div class="question-nav">
+                <button onClick={()=> setCount(0)}>1</button>
+                <button onClick={()=> setCount(1)}>2</button>
+                <button onClick={()=> setCount(2)}>3</button>
+                <button onClick={()=> setCount(3)}>4</button>
+                <button onClick={()=> setCount(4)}>5</button>
+                <button onClick={()=> setCount(5)}>6</button>
+                <button onClick={()=> setCount(6)}>7</button>
+                <button onClick={()=> setCount(7)}>8</button>
+                <button onClick={()=> setCount(8)}>9</button>
+                <button onClick={()=> setCount(9)}>10</button>
+            </div>
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
@@ -25,7 +37,6 @@ export default function Quiz() {
                     <button>Submit</button>
                 )
                 }
-
             </div>
         </>
     )
