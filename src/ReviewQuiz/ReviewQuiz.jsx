@@ -2,6 +2,8 @@ import './ReviewQuiz.css'
 import useDocumentTitle from '../useDocumentTitle'
 import questions from '../questions.json'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
+import { AiFillHome } from 'react-icons/ai';
 
 export default function Quiz() {
     const [count, setCount] = useState(0)
@@ -63,10 +65,13 @@ export default function Quiz() {
 
     return (
         <>
+            <Link to="/">
+                <AiFillHome className="home"/>
+            </Link>
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
-                <div class="options">
+                <div className="options">
                     <button className={A} onClick={() => (checkAnswer('A'))}>{questions[count].optionA}</button>
                     <button className={B} onClick={() => (checkAnswer('B'))}>{questions[count].optionB}</button>
                     <button className={C} onClick={() => (checkAnswer('C'))}>{questions[count].optionC}</button>

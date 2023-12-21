@@ -1,0 +1,12 @@
+.selected {
+    background-color: var(--green);
+    color: white;
+}
+
+.home {
+    font-size: 32px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: white;
+}

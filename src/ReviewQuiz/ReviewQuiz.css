@@ -26,3 +26,11 @@
 .incorrect {
     background-color: var(--red)
 }
+
+.home {
+    font-size: 32px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: white;
+}

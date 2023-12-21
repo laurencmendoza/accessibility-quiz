@@ -2,6 +2,8 @@ import './GradedQuiz.css'
 import useDocumentTitle from '../useDocumentTitle'
 import questions from '../questions.json'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
+import { AiFillHome } from 'react-icons/ai';
 
 export default function GradedQuiz() {
     const [count, setCount] = useState(0)
@@ -15,11 +17,31 @@ export default function GradedQuiz() {
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
     const questionsArr = [0,1,2,3,4,5,6,7,8,9]
+    const answerArr = questions.map((question) => (question.answer))
+    console.log(answerArr)
 
-    function checkAnswer(input) {
+    function saveAnswer(input) {
         setAnswered(true)
-        if (input === questions[count].answer) {
-            setScore(score+1)
+        if (input === 'A') {
+            setA('selected')
+            setB('')
+            setC('')
+            setD('')
+        } else if (input === 'B') {
+            setA('')
+            setB('selected')
+            setC('')
+            setD('')
+        } else if (input === 'C') {
+            setA('')
+            setB('')
+            setC('selected')
+            setD('')
+        } else {
+            setA('')
+            setB('')
+            setC('')
+            setD('selected')
         }
     }
 
@@ -43,20 +65,23 @@ export default function GradedQuiz() {
 
     return (
         <>
-            <div class="question-nav">
+            <Link to="/">
+                <AiFillHome className="home"/>
+            </Link>
+            <div className="question-nav">
                 {questionsArr.map((num)=> (
-                <button onClick={()=> toNumber(num)}>{num+1}</button>
+                <button key={num+1} onClick={()=> toNumber(num)}>{num+1}</button>
                 ))}
             </div>
             <div className="card">
                 <p>Score: {score}</p>
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
-                <div class="options">
-                    <button className={A} onClick={() => (checkAnswer('A'))}>{questions[count].optionA}</button>
-                    <button className={B} onClick={() => (checkAnswer('B'))}>{questions[count].optionB}</button>
-                    <button className={C} onClick={() => (checkAnswer('C'))}>{questions[count].optionC}</button>
-                    <button className={D} onClick={() => (checkAnswer('D'))}>{questions[count].optionD}</button>
+                <div className="options">
+                    <button className={A} onClick={() => (saveAnswer('A'))}>{questions[count].optionA}</button>
+                    <button className={B} onClick={() => (saveAnswer('B'))}>{questions[count].optionB}</button>
+                    <button className={C} onClick={() => (saveAnswer('C'))}>{questions[count].optionC}</button>
+                    <button className={D} onClick={() => (saveAnswer('D'))}>{questions[count].optionD}</button>
                 </div>
                 { answered && 
                 (
