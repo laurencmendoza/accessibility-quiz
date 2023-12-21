@@ -5,6 +5,7 @@
     align-self: center;
     border-radius: 25px;
     max-width: 720px;
+    min-width: 720px;
 }
 
 .review-btn {

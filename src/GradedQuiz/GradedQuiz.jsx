@@ -12,7 +12,6 @@ export default function GradedQuiz() {
     const [C, setC] = useState()
     const [D, setD] = useState()
     const [answered, setAnswered] = useState(false)
-    const [score, setScore] = useState(0)
 
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
@@ -21,6 +20,10 @@ export default function GradedQuiz() {
     console.log(answerArr)
 
     function saveAnswer(input) {
+        // needs to set answered to true
+        // needs to show selected choice
+        // needs to save user choices to array
+        // needs to mark question as answered
         setAnswered(true)
         if (input === 'A') {
             setA('selected')
@@ -74,7 +77,6 @@ export default function GradedQuiz() {
                 ))}
             </div>
             <div className="card">
-                <p>Score: {score}</p>
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
                 <div className="options">
