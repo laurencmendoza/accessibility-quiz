@@ -13,7 +13,7 @@
         "optionB": "Option B",
         "optionC": "Option C",
         "optionD": "Option D", 
-        "answer": "A"
+        "answer": "B"
     }, 
     {
         "question": "Question 3",
@@ -21,7 +21,7 @@
         "optionB": "Option B",
         "optionC": "Option C",
         "optionD": "Option D", 
-        "answer": "A"
+        "answer": "C"
     }, 
     {
         "question": "Question 4",
@@ -29,7 +29,7 @@
         "optionB": "Option B",
         "optionC": "Option C",
         "optionD": "Option D", 
-        "answer": "A"
+        "answer": "D"
     }, 
     {
         "question": "Question 5",
