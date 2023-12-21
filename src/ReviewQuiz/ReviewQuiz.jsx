@@ -61,22 +61,8 @@ export default function Quiz() {
         setD('')
     }
 
-    function toNumber(input) {
-        setCount(input)
-        setA('')
-        setB('')
-        setC('')
-        setD('')
-        setAnswered(false)
-    }
-
     return (
         <>
-            <div class="question-nav">
-                {questionsArr.map((num)=> (
-                <button onClick={()=> toNumber(num)}>{num+1}</button>
-                ))}
-            </div>
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>

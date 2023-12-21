@@ -10,45 +10,16 @@ export default function GradedQuiz() {
     const [C, setC] = useState()
     const [D, setD] = useState()
     const [answered, setAnswered] = useState(false)
+    const [score, setScore] = useState(0)
 
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
     const questionsArr = [0,1,2,3,4,5,6,7,8,9]
 
     function checkAnswer(input) {
-        if (input === questions[count].answer && !answered) {
-            if (questions[count].answer === 'A') {
-                setA('correct')
-                setB('incorrect')
-                setC('incorrect')
-                setD('incorrect')
-            } else if (questions[count].answer === 'B') {
-                setA('incorrect')
-                setB('correct')
-                setC('incorrect')
-                setD('incorrect')
-            } else if (questions[count].answer === 'C') {
-                setA('incorrect')
-                setB('incorrect')
-                setC('correct')
-                setD('incorrect')
-            } else {
-                setA('incorrect')
-                setB('incorrect')
-                setC('incorrect')
-                setD('correct')
-            }
-            setAnswered(true)
-        } else if (input !== questions[count].answer) {
-            if (input === 'A') {
-                setA('incorrect')
-            } else if (input === 'B') {
-                setB('incorrect') 
-            } else if (input === 'C') {
-                setC('incorrect') 
-            } else {
-                setD('incorrect')
-            }
+        setAnswered(true)
+        if (input === questions[count].answer) {
+            setScore(score+1)
         }
     }
 
@@ -78,6 +49,7 @@ export default function GradedQuiz() {
                 ))}
             </div>
             <div className="card">
+                <p>Score: {score}</p>
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
                 <div class="options">
