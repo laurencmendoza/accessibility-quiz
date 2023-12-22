@@ -19,12 +19,56 @@ export default function GradedQuiz() {
     const answerArr = questions.map((question) => (question.answer))
     console.log(answerArr)
 
-    function saveAnswer(input) {
-        // needs to set answered to true
-        // needs to show selected choice
-        // needs to save user choices to array
-        // needs to mark question as answered
+    let initialAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    const [userAnswers, setUserAnswers] = useState(initialAnswers)
+
+    
+
+    function handleAnswerClick(questionNo, answerInput) {
+        const nextAnswers = userAnswers.map((c, i)=> {
+            if (i === questionNo && answerInput === 'A') {
+                return 'A'
+            } else if (i === questionNo && answerInput === 'B') {
+                return 'B'
+            } else if (i === questionNo && answerInput === 'C') {
+                return 'C'
+            } else if (i === questionNo && answerInput === 'D') {
+                return 'D'
+            } else {
+                return c
+            }
+        })
+
+        if (answerInput === 'A') {
+            setA('selected')
+            setB('')
+            setC('')
+            setD('')
+        } else if (answerInput === 'B') {
+            setA('')
+            setB('selected')
+            setC('')
+            setD('')
+        } else if (answerInput === 'C') {
+            setA('')
+            setB('')
+            setC('selected')
+            setD('')
+        } else if (answerInput === 'D') {
+            setA('')
+            setB('')
+            setC('')
+            setD('selected')
+        }
+        console.log(nextAnswers)
         setAnswered(true)
+        setUserAnswers(nextAnswers)
+    }
+
+
+
+    function showSelected(input) {
         if (input === 'A') {
             setA('selected')
             setB('')
@@ -47,6 +91,7 @@ export default function GradedQuiz() {
             setD('selected')
         }
     }
+
 
     function next() {
         setCount(count+1)
@@ -80,21 +125,18 @@ export default function GradedQuiz() {
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
                 <div className="options">
-                    <button className={A} onClick={() => (saveAnswer('A'))}>{questions[count].optionA}</button>
-                    <button className={B} onClick={() => (saveAnswer('B'))}>{questions[count].optionB}</button>
-                    <button className={C} onClick={() => (saveAnswer('C'))}>{questions[count].optionC}</button>
-                    <button className={D} onClick={() => (saveAnswer('D'))}>{questions[count].optionD}</button>
+                    <button className={A} onClick={() => (handleAnswerClick(count, 'A'))}>{questions[count].optionA}</button>
+                    <button className={B} onClick={() => (handleAnswerClick(count, 'B'))}>{questions[count].optionB}</button>
+                    <button className={C} onClick={() => (handleAnswerClick(count, 'C'))}>{questions[count].optionC}</button>
+                    <button className={D} onClick={() => (handleAnswerClick(count, 'D'))}>{questions[count].optionD}</button>
                 </div>
-                { answered && 
-                (
+                { answered && (
                     count < 9 ? (
                         <button onClick={next}>Next</button>
                     ) : (
                         <button>Submit</button>
                     )
                 )}
-                {
-                }
             </div>
         </>
     )
