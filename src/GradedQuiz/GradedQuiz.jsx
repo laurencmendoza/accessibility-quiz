@@ -17,13 +17,10 @@ export default function GradedQuiz() {
 
     const questionsArr = [0,1,2,3,4,5,6,7,8,9]
     const answerArr = questions.map((question) => (question.answer))
-    console.log(answerArr)
 
     let initialAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     const [userAnswers, setUserAnswers] = useState(initialAnswers)
-
-    
 
     function handleAnswerClick(questionNo, answerInput) {
         const nextAnswers = userAnswers.map((c, i)=> {
@@ -64,32 +61,6 @@ export default function GradedQuiz() {
         console.log(nextAnswers)
         setAnswered(true)
         setUserAnswers(nextAnswers)
-    }
-
-
-
-    function showSelected(input) {
-        if (input === 'A') {
-            setA('selected')
-            setB('')
-            setC('')
-            setD('')
-        } else if (input === 'B') {
-            setA('')
-            setB('selected')
-            setC('')
-            setD('')
-        } else if (input === 'C') {
-            setA('')
-            setB('')
-            setC('selected')
-            setD('')
-        } else {
-            setA('')
-            setB('')
-            setC('')
-            setD('selected')
-        }
     }
 
 
