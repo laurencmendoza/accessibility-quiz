@@ -16,11 +16,11 @@
         "answer": "B"
     }, 
     {
-        "question": "Question 3",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
+        "question": "While accessibility has broader benefits in areas such as universal design and inclusion, it is beneficial to keep accessibility focused on...",
+        "optionA": "people with geographic or language barriers", 
+        "optionB": "people accessing the Web using their mobile phones",
+        "optionC": "people with disabilities",
+        "optionD": "people who use the web primarily for essential needs", 
         "answer": "C"
     }, 
     {
