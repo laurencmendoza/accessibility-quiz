@@ -8,11 +8,11 @@
         "answer": "A"
     }, 
     {
-        "question": "Question 2",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
+        "question": "Which of the following statements are true?",
+        "optionA": "Web accessibility focuses mainly on making websites usable for people using screen readers.", 
+        "optionB": "Screen readers can be used by people with many different disabilities, including cognitive disabilities.",
+        "optionC": "People with disabilities will typically use one assitive technology or adaptive strategy.",
+        "optionD": "Web accessibility primarily encompasses visual and auditory disabilities that affect access to the Web.", 
         "answer": "B"
     }, 
     {
