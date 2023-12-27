@@ -87,11 +87,11 @@ export default function GradedQuiz() {
             <Link to="/">
                 <AiFillHome className="home"/>
             </Link>
-            <div className="question-nav">
+            {/* <div className="question-nav">
                 {questionsArr.map((num)=> (
                 <button key={num+1} onClick={()=> toNumber(num)}>{num+1}</button>
                 ))}
-            </div>
+            </div> */}
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
