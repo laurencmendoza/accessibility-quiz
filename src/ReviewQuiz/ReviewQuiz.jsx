@@ -15,8 +15,6 @@ export default function Quiz() {
 
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
-    const questionsArr = [0,1,2,3,4,5,6,7,8,9]
-
     function checkAnswer(input) {
         if (input === questions[count].answer && !answered) {
             if (questions[count].answer === 'A') {

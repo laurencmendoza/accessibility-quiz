@@ -16,8 +16,6 @@ export default function GradedQuiz() {
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
     const questionsArr = [0,1,2,3,4,5,6,7,8,9]
-    const answerArr = questions.map((question) => (question.answer))
-
     let initialAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     const [userAnswers, setUserAnswers] = useState(initialAnswers)
@@ -106,7 +104,9 @@ export default function GradedQuiz() {
                         count < 9 ? (
                             <button onClick={next}>Next</button>
                         ) : (
-                            <button>Submit</button>
+                            <Link to="/quiz/graded/results">
+                                <button>Submit</button>
+                            </Link>
                         )
                     )}
                 </div>
