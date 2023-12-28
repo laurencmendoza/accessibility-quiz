@@ -77,16 +77,18 @@ export default function Quiz() {
                     <button className={C} onClick={() => (checkAnswer('C'))}>{questions[count].optionC}</button>
                     <button className={D} onClick={() => (checkAnswer('D'))}>{questions[count].optionD}</button>
                 </div>
-                { answered && 
-                (
-                    count < 9 ? (
-                        <button onClick={next}>Next</button>
-                    ) : (
-                        <button>Submit</button>
-                    )
-                )}
-                {
-                }
+                <div className="button-div">
+                    { answered && 
+                    (
+                        count < 9 ? (
+                            <button onClick={next}>Next</button>
+                        ) : (
+                            <Link to="/">
+                            <button>Finish</button>
+                            </Link>
+                        )
+                    )}
+                </div>
             </div>
         </>
     )

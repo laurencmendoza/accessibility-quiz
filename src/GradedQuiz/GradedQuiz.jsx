@@ -101,13 +101,15 @@ export default function GradedQuiz() {
                     <button className={C} onClick={() => (handleAnswerClick(count, 'C'))}>{questions[count].optionC}</button>
                     <button className={D} onClick={() => (handleAnswerClick(count, 'D'))}>{questions[count].optionD}</button>
                 </div>
-                { answered && (
-                    count < 9 ? (
-                        <button onClick={next}>Next</button>
-                    ) : (
-                        <button>Submit</button>
-                    )
-                )}
+                <div className="button-div">
+                    { answered && (
+                        count < 9 ? (
+                            <button onClick={next}>Next</button>
+                        ) : (
+                            <button>Submit</button>
+                        )
+                    )}
+                </div>
             </div>
         </>
     )
