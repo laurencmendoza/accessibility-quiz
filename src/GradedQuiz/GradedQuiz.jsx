@@ -59,8 +59,6 @@ export default function GradedQuiz() {
             setC('')
             setD('selected')
         }
-        console.log(nextAnswers)
-        console.log(questions[count].answer)
         setAnswered(true)
         setUserAnswers(nextAnswers)
     }
@@ -73,14 +71,11 @@ export default function GradedQuiz() {
         setB('')
         setC('')
         setD('')
-        console.log(userAnswers[count])
-        console.log(questions[count].answer)
 
         if (userAnswers[count] === questions[count].answer) {
             setScore(score +1)
         }
 
-        console.log(score)
     }
 
     // function toNumber(input) {
@@ -98,8 +93,6 @@ export default function GradedQuiz() {
         if (userAnswers[count] === questions[count].answer) {
             setScore(score + 1)
         }
-
-        console.log(score)
     }
 
     return (
