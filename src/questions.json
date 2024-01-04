@@ -24,11 +24,11 @@
         "answer": "C"
     }, 
     {
-        "question": "Question 4",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
+        "question": "What are essential design features for people using braille display and people with physical impairments?",
+        "optionA": "Keyboard accessibility", 
+        "optionB": "Proper labels for buttons and controls",
+        "optionC": "Logical focus order",
+        "optionD": "All of the above", 
         "answer": "D"
     }, 
     {
