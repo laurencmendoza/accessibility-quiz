@@ -13,10 +13,10 @@ export default function Home() {
                 <p>Take the <span className="review">review quiz</span> to review your knowledge and get immediate feedback on each answer.</p>
                 <p>Take the <span className="graded">graded quiz</span> to assess what you know. Your score will be revealed once you have completed the quiz.</p>
                 <Link to="/quiz/review">
-                    <button class="review-btn">REVIEW QUIZ</button>
+                    <button className="review-btn">REVIEW QUIZ</button>
                 </Link>
                 <Link to="/quiz/graded">
-                    <button class="graded-btn">GRADED QUIZ</button>
+                    <button className="graded-btn">GRADED QUIZ</button>
                 </Link>
             </div>
         </>

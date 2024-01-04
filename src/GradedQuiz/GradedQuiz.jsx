@@ -14,6 +14,8 @@ export default function GradedQuiz() {
     const [answered, setAnswered] = useState(false)
     const [submitted, setSubmitted] = useState(false)
 
+    const [score, setScore] = useState(0)
+
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
     // const questionsArr = [0,1,2,3,4,5,6,7,8,9]
@@ -58,6 +60,7 @@ export default function GradedQuiz() {
             setD('selected')
         }
         console.log(nextAnswers)
+        console.log(questions[count].answer)
         setAnswered(true)
         setUserAnswers(nextAnswers)
     }
@@ -70,6 +73,14 @@ export default function GradedQuiz() {
         setB('')
         setC('')
         setD('')
+        console.log(userAnswers[count])
+        console.log(questions[count].answer)
+
+        if (userAnswers[count] === questions[count].answer) {
+            setScore(score +1)
+        }
+
+        console.log(score)
     }
 
     // function toNumber(input) {
@@ -83,6 +94,12 @@ export default function GradedQuiz() {
 
     function showResults() {
         setSubmitted(true)
+
+        if (userAnswers[count] === questions[count].answer) {
+            setScore(score + 1)
+        }
+
+        console.log(score)
     }
 
     return (
@@ -117,8 +134,18 @@ export default function GradedQuiz() {
             </div>) : 
             (<div className="card">
                 <h1>Results</h1>
+                <p className="score">Score: <span>{score}/10</span></p>
+                    <div className="question-results">
+                        {userAnswers.map((answer, idx)=> (
+                            answer === questions[idx].answer ? 
+                                (<p className="question-results-green" key={idx+1}>{idx+1}</p>) : 
+                                (<p className="question-results-red" key={idx+1}>{idx+1}</p>)
+                        
+                        ))}
+                    </div>
+                
                 <Link to="/">
-                    <button>Return to Home</button>
+                    <button className="return-btn">Return to Home</button>
                 </Link>
             </div>)}
             
