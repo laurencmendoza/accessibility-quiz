@@ -12,10 +12,11 @@ export default function GradedQuiz() {
     const [C, setC] = useState()
     const [D, setD] = useState()
     const [answered, setAnswered] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
 
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
-    const questionsArr = [0,1,2,3,4,5,6,7,8,9]
+    // const questionsArr = [0,1,2,3,4,5,6,7,8,9]
     let initialAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     const [userAnswers, setUserAnswers] = useState(initialAnswers)
@@ -71,13 +72,17 @@ export default function GradedQuiz() {
         setD('')
     }
 
-    function toNumber(input) {
-        setCount(input)
-        setA('')
-        setB('')
-        setC('')
-        setD('')
-        setAnswered(false)
+    // function toNumber(input) {
+    //     setCount(input)
+    //     setA('')
+    //     setB('')
+    //     setC('')
+    //     setD('')
+    //     setAnswered(false)
+    // }
+
+    function showResults() {
+        setSubmitted(true)
     }
 
     return (
@@ -90,7 +95,8 @@ export default function GradedQuiz() {
                 <button key={num+1} onClick={()=> toNumber(num)}>{num+1}</button>
                 ))}
             </div> */}
-            <div className="card">
+            {!submitted ? 
+            (<div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
                 <div className="options">
@@ -104,13 +110,18 @@ export default function GradedQuiz() {
                         count < 9 ? (
                             <button onClick={next}>Next</button>
                         ) : (
-                            <Link to="/quiz/graded/results">
-                                <button>Submit</button>
-                            </Link>
+                            <button onClick={showResults}>Submit</button>
                         )
                     )}
                 </div>
-            </div>
+            </div>) : 
+            (<div className="card">
+                <h1>Results</h1>
+                <Link to="/">
+                    <button>Return to Home</button>
+                </Link>
+            </div>)}
+            
         </>
     )
 }
