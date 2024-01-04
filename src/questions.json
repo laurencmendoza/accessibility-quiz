@@ -32,11 +32,11 @@
         "answer": "D"
     }, 
     {
-        "question": "Question 5",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
+        "question": "Which of the following statements is true?",
+        "optionA": "Only manual testing can tell you if your site is one hundred percent accessible and compliant", 
+        "optionB": "Accessibility evaluation tools can tell you if your site is accessible and compliant with the exception of images",
+        "optionC": "Only using a combination of accessibility evaluation tools and manual testing can tell you how accessible and compliant your site is",
+        "optionD": "Accessibility evaluation tools can tell you if your site is one hundred percent accessible and compliant", 
         "answer": "A"
     }, 
     {
