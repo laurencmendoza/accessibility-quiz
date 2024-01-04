@@ -4,6 +4,7 @@ import questions from '../questions.json'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
+import { BsFillCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 
 export default function GradedQuiz() {
     const [count, setCount] = useState(0)
@@ -128,15 +129,20 @@ export default function GradedQuiz() {
             (<div className="card">
                 <h1>Results</h1>
                 <p className="score">Score: <span>{score}/10</span></p>
-                    <div className="question-results">
-                        {userAnswers.map((answer, idx)=> (
-                            answer === questions[idx].answer ? 
-                                (<p className="question-results-green" key={idx+1}>{idx+1}</p>) : 
-                                (<p className="question-results-red" key={idx+1}>{idx+1}</p>)
-                        
-                        ))}
-                    </div>
-                
+                <div className="question-results">
+                    {userAnswers.map((answer, idx)=> (
+                        answer === questions[idx].answer ? 
+                            (<div className="question-result">
+                                <p className="question-results-green" key={idx+1}>{idx+1}</p>
+                                <BsFillCheckCircleFill className="circle"/>
+                            </div>
+                            ) : 
+                            (<div className="question-result">
+                                <p className="question-results-red" key={idx+1}>{idx+1}</p>
+                                <BsXCircleFill className="circle"/>
+                            </div>)
+                    ))}
+                </div>
                 <Link to="/">
                     <button className="return-btn">Return to Home</button>
                 </Link>

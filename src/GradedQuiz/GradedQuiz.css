@@ -50,3 +50,14 @@
     display: flex;
     color: black;
 }
+
+.circle {
+    font-size: 28px;
+    align-self: center;
+}
+
+.question-result {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
