@@ -6,15 +6,24 @@ import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 
 export default function Quiz() {
+
+    // count stores current question index, increments with the next button to move to the next question
     const [count, setCount] = useState(0)
+
+    // stores class name when answer is selected to show whether answer is correct or incorrect
     const [A, setA] = useState()
     const [B, setB] = useState()
     const [C, setC] = useState()
     const [D, setD] = useState()
+
+    // stores boolean to toggle next button appearance
     const [answered, setAnswered] = useState(false)
 
+    // controls title for page 
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
+    // displays answer choice as correct or incorrect once the answer is selected
+    // TO DO: need to show whether answer is correct or incorrect beyond color cue
     function checkAnswer(input) {
         if (input === questions[count].answer && !answered) {
             if (questions[count].answer === 'A') {
@@ -52,6 +61,7 @@ export default function Quiz() {
         }
     }
 
+    // handles change to next question, resets selected answer and calculates score
     function next() {
         setCount(count+1)
         setAnswered(false)
@@ -63,9 +73,11 @@ export default function Quiz() {
 
     return (
         <>
+            {/* Home button */}
             <Link to="/">
                 <AiFillHome className="home"/>
             </Link>
+            
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
