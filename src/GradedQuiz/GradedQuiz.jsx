@@ -7,23 +7,36 @@ import { AiFillHome } from 'react-icons/ai';
 import { BsFillCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 
 export default function GradedQuiz() {
+
+    // count stores current question index, increments with the next button to move to the next question
     const [count, setCount] = useState(0)
+
+    // stores selected class name when answer choice is clicked
     const [A, setA] = useState()
     const [B, setB] = useState()
     const [C, setC] = useState()
     const [D, setD] = useState()
+
+    // stores boolean to toggle next button appearance
     const [answered, setAnswered] = useState(false)
+
+    // stores boolean to toggle showing results and hiding questions
     const [submitted, setSubmitted] = useState(false)
 
+    // stores number of questions answered correctly
     const [score, setScore] = useState(0)
 
+    // controls title for page 
     useDocumentTitle(`Question ${count+1} - Accessibility Quiz`)
 
-    // const questionsArr = [0,1,2,3,4,5,6,7,8,9]
+    // initial array to store answer choices
     let initialAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
     const [userAnswers, setUserAnswers] = useState(initialAnswers)
 
+    // for map function to create buttons to each question
+    // const questionsArr = [0,1,2,3,4,5,6,7,8,9]
+
+    // stores answer choices, toggles selected classname when answer choice is selected, and toggles appearance of next button
     function handleAnswerClick(questionNo, answerInput) {
         const nextAnswers = userAnswers.map((c, i)=> {
             if (i === questionNo && answerInput === 'A') {
@@ -64,7 +77,7 @@ export default function GradedQuiz() {
         setUserAnswers(nextAnswers)
     }
 
-
+    // handles change to next question, resets selected answer and calculates score
     function next() {
         setCount(count+1)
         setAnswered(false)
@@ -76,9 +89,9 @@ export default function GradedQuiz() {
         if (userAnswers[count] === questions[count].answer) {
             setScore(score +1)
         }
-
     }
 
+    // handles jump to different questions in map function
     // function toNumber(input) {
     //     setCount(input)
     //     setA('')
@@ -88,6 +101,7 @@ export default function GradedQuiz() {
     //     setAnswered(false)
     // }
 
+    // hides question card and shows results, calculates score
     function showResults() {
         setSubmitted(true)
 
@@ -98,16 +112,21 @@ export default function GradedQuiz() {
 
     return (
         <>
+            {/* Home button */}
             <Link to="/">
                 <AiFillHome className="home"/>
             </Link>
+
+            {/* buttons to skip to different question numbers */}
             {/* <div className="question-nav">
                 {questionsArr.map((num)=> (
                 <button key={num+1} onClick={()=> toNumber(num)}>{num+1}</button>
                 ))}
             </div> */}
+
             {!submitted ? 
             (<div className="card">
+                {/* Displays questions and answer choices */}
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
                 <div className="options">
@@ -127,6 +146,7 @@ export default function GradedQuiz() {
                 </div>
             </div>) : 
             (<div className="card">
+                {/* Shows results */}
                 <h1>Results</h1>
                 <p className="score">Score: <span>{score}/10</span></p>
                 <div className="question-results">
