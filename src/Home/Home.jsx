@@ -3,6 +3,7 @@ import useDocumentTitle from '../useDocumentTitle'
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+    // sets document title for home page 
     useDocumentTitle('Accessibility Quiz')
     
     return (
