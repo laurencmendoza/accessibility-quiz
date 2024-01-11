@@ -154,12 +154,12 @@ export default function GradedQuiz() {
                         answer === questions[idx].answer ? 
                             (<div className="question-result">
                                 <p className="question-results-green" key={idx+1}>{idx+1}</p>
-                                <BsFillCheckCircleFill className="circle"/>
+                                <BsFillCheckCircleFill className="circle" aria-label="correct"/>
                             </div>
                             ) : 
                             (<div className="question-result">
                                 <p className="question-results-red" key={idx+1}>{idx+1}</p>
-                                <BsXCircleFill className="circle"/>
+                                <BsXCircleFill className="circle" aria-label="incorrect"/>
                             </div>)
                     ))}
                 </div>
