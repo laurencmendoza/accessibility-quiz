@@ -76,7 +76,7 @@ export default function Quiz() {
         <>
             {/* Home button */}
             <Link to="/">
-                <AiFillHome className="home"/>
+                <AiFillHome className="home" aria-label="home"/>
             </Link>
 
             <div className="card">

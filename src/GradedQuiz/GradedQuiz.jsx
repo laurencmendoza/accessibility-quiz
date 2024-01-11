@@ -12,10 +12,10 @@ export default function GradedQuiz() {
     const [count, setCount] = useState(0)
 
     // stores selected class name when answer choice is clicked
-    const [A, setA] = useState()
-    const [B, setB] = useState()
-    const [C, setC] = useState()
-    const [D, setD] = useState()
+    const [A, setA] = useState('unselected')
+    const [B, setB] = useState('unselected')
+    const [C, setC] = useState('unselected')
+    const [D, setD] = useState('unselected')
 
     // stores boolean to toggle next button appearance
     const [answered, setAnswered] = useState(false)
@@ -54,23 +54,23 @@ export default function GradedQuiz() {
 
         if (answerInput === 'A') {
             setA('selected')
-            setB('')
-            setC('')
-            setD('')
+            setB('unselected')
+            setC('unselected')
+            setD('unselected')
         } else if (answerInput === 'B') {
-            setA('')
+            setA('unselected')
             setB('selected')
-            setC('')
-            setD('')
+            setC('unselected')
+            setD('unselected')
         } else if (answerInput === 'C') {
-            setA('')
-            setB('')
+            setA('unselected')
+            setB('unselected')
             setC('selected')
-            setD('')
+            setD('unselected')
         } else if (answerInput === 'D') {
-            setA('')
-            setB('')
-            setC('')
+            setA('unselected')
+            setB('unselected')
+            setC('unselected')
             setD('selected')
         }
         setAnswered(true)
@@ -114,7 +114,7 @@ export default function GradedQuiz() {
         <>
             {/* Home button */}
             <Link to="/">
-                <AiFillHome className="home"/>
+                <AiFillHome className="home" aria-label="home"/>
             </Link>
 
             {/* buttons to skip to different question numbers */}
