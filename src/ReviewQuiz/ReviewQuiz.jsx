@@ -4,6 +4,7 @@ import questions from '../questions.json'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
+import { BsFillCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 
 export default function Quiz() {
 
@@ -77,15 +78,31 @@ export default function Quiz() {
             <Link to="/">
                 <AiFillHome className="home"/>
             </Link>
-            
+
             <div className="card">
                 <h1>Question #{count+1}</h1>
                 <p>{questions[count].question}</p>
                 <div className="options">
-                    <button className={A} onClick={() => (checkAnswer('A'))}>{questions[count].optionA}</button>
-                    <button className={B} onClick={() => (checkAnswer('B'))}>{questions[count].optionB}</button>
-                    <button className={C} onClick={() => (checkAnswer('C'))}>{questions[count].optionC}</button>
-                    <button className={D} onClick={() => (checkAnswer('D'))}>{questions[count].optionD}</button>
+                    <button className={A} onClick={() => (checkAnswer('A'))}>
+                        {A === 'correct' && (<div className="answer-feedback"><BsFillCheckCircleFill/></div>)}
+                        {A === 'incorrect' && (<div className="answer-feedback"><BsXCircleFill/></div>)}
+                        {questions[count].optionA}
+                    </button>
+                    <button className={B} onClick={() => (checkAnswer('B'))}>
+                        {B === 'correct' && (<div className="answer-feedback"><BsFillCheckCircleFill/></div>)}
+                        {B === 'incorrect' && (<div className="answer-feedback"><BsXCircleFill/></div>)}
+                        {questions[count].optionB}
+                    </button>
+                    <button className={C} onClick={() => (checkAnswer('C'))}>
+                        {C === 'correct' && (<div className="answer-feedback"><BsFillCheckCircleFill/></div>)}
+                        {C === 'incorrect' && (<div className="answer-feedback"><BsXCircleFill/></div>)}
+                        {questions[count].optionC}
+                    </button>
+                    <button className={D} onClick={() => (checkAnswer('D'))}>
+                        {D === 'correct' && (<div className="answer-feedback"><BsFillCheckCircleFill/></div>)}
+                        {D === 'incorrect' && (<div className="answer-feedback"><BsXCircleFill/></div>)}
+                        {questions[count].optionD}
+                        </button>
                 </div>
                 <div className="button-div">
                     { answered && 

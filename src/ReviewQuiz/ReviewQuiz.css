@@ -21,10 +21,20 @@
 
 .correct {
     background-color: var(--light-green);
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .incorrect {
-    background-color: var(--red)
+    background-color: var(--red);
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .home {
@@ -38,3 +48,4 @@
 .button-div {
     height: 40px;
 }
+
