@@ -40,12 +40,12 @@
         "answer": "C"
     }, 
     {
-        "question": "Question 6",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
-        "answer": "A"
+        "question": "If an image on a web page is purely decorative, how should the alternative text be written in the alt attribute?",
+        "optionA": "The alt text should describe what the image looks like in detail", 
+        "optionB": "There sould be no alt attribute added to the image",
+        "optionC": "The alt text should be left empty, or null",
+        "optionD": "The alt text should describe what tht image looks like succinctly", 
+        "answer": "C"
     }, 
     {
         "question": "Question 7",
