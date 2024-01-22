@@ -48,12 +48,12 @@
         "answer": "C"
     }, 
     {
-        "question": "Question 7",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
-        "answer": "A"
+        "question": "Which of the following are examples of alternatives for time-based media (such as podcasts, movies, video tours, etc.)?",
+        "optionA": "captions and transcripts", 
+        "optionB": "audio descriptions",
+        "optionC": "sign language",
+        "optionD": "all of the above", 
+        "answer": "D"
     }, 
     {
         "question": "Question 8",
