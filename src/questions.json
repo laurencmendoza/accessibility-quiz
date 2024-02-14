@@ -56,27 +56,27 @@
         "answer": "D"
     }, 
     {
-        "question": "Question 8",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
+        "question": "Guideline 2.3 Seizures and Physical Reactions of WCAG says 'Do not design content in a way that is known to cause seizures or physical reactions. Which of the following is a guideline that should be used to avoid causing seizures or physical reactions?",
+        "optionA": "Content should not flash or blink more than three times per second.", 
+        "optionB": "Animations should not auto-play for longer than 5 seconds.",
+        "optionC": "If animations play on an infinite loop, users should have a way to pause the animation.",
+        "optionD": "All of the above.", 
+        "answer": "D"
+    }, 
+    {
+        "question": "Which of the following is the best example of accessible link text? ",
+        "optionA": "buy tickets", 
+        "optionB": "read more",
+        "optionC": "download",
+        "optionD": "click here", 
         "answer": "A"
     }, 
     {
-        "question": "Question 9",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
-        "answer": "A"
-    }, 
-    {
-        "question": "Question 10",
-        "optionA": "Option A", 
-        "optionB": "Option B",
-        "optionC": "Option C",
-        "optionD": "Option D", 
-        "answer": "A"
+        "question": "Which of the following is a best practice to help people using screen readers or Braille displays navigate to the main content on a web page?",
+        "optionA": "Use hidden text that is available only to people using screen readers to indicate where the main content starts", 
+        "optionB": "Provide a heading marked up as h2 to indicate the start of the main content",
+        "optionC": "Indicate where the main content starts by using the main element in HTML",
+        "optionD": "Make the title of the main content a link", 
+        "answer": "C"
     }
 ]
