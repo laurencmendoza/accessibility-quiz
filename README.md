@@ -1,8 +1,8 @@
 # Accessibility Quiz
-This quiz is a frontend only application that offers two version of a quiz: a review and a graded quiz. The review quiz will give you immediate feedback on your answers, while the graded quiz will show you which questions you missed, and which questions you answered correctly at the end of the quiz. The information about web accessibility is largely gathered from the W3Cx: Introduction to Web Accessibility course on edX, and the W3C Web Accessibility Initiative website. 
+This quiz is a frontend application that offers two version of a quiz: a review and a graded quiz. The review quiz will give you immediate feedback on your answers, while the graded quiz will show you which questions you missed, and which questions you answered correctly at the end of the quiz. The information about web accessibility is largely gathered from the W3Cx: Introduction to Web Accessibility course on edX, and the W3C Web Accessibility Initiative website. 
 
 ## Getting Started
-Click here to try the quiz!
+[Click here to try the quiz!](https://react-accessibility-quiz.netlify.app/)
 
 ## Screenshots
 #### Home Page
